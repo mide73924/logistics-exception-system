@@ -1,0 +1,53 @@
+[
+  {
+    "rule_code": "ARRIVAL_LATE",
+    "description": "Actual arrival is after planned arrival",
+    "field": "actual_arrival",
+    "comparison": "after",
+    "reference_field": "planned_arrival",
+    "severity": "HIGH"
+  },
+  {
+    "rule_code": "MISSING_CARRIER",
+    "description": "Carrier is missing",
+    "field": "carrier",
+    "comparison": "empty",
+    "severity": "MEDIUM"
+  },
+  {
+    "rule_code": "ORIGIN_MISSING",
+    "description": "Origin field is empty",
+    "field": "origin",
+    "comparison": "empty",
+    "severity": "CRITICAL"
+  },
+  {
+    "rule_code": "DESTINATION_MISSING",
+    "description": "Destination field is empty",
+    "field": "destination",
+    "comparison": "empty",
+    "severity": "CRITICAL"
+  },
+  {
+    "rule_code": "PLANNED_DEPARTURE_MISSING",
+    "description": "Planned departure date missing",
+    "field": "planned_departure",
+    "comparison": "empty",
+    "severity": "HIGH"
+  },
+  {
+    "rule_code": "PLANNED_ARRIVAL_MISSING",
+    "description": "Planned arrival date missing",
+    "field": "planned_arrival",
+    "comparison": "empty",
+    "severity": "HIGH"
+  },
+  {
+    "rule_code": "STATUS_PENDING",
+    "description": "Shipment is marked as pending but has an actual arrival date",
+    "field": "status",
+    "comparison": "equals",
+    "expected_value": "PENDING",
+    "severity": "LOW"
+  }
+]
