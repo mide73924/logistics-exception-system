@@ -6,7 +6,7 @@
 --   - exceptions: rule-based operational exceptions linked to shipments
 --
 -- Usage:
---   mysql -u <user> -p < schema.sql
+--   mysql -u <user> -p <database> < schema.sql
 --
 -- Notes:
 --   - Assumes MySQL / MariaDB

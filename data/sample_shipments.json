@@ -1,0 +1,13 @@
+[
+  {
+    "shipment_ref": "TEST1",
+    "origin": "A",
+    "destination": "B",
+    "carrier": "DHL",
+    "planned_departure": "2026-01-01",
+    "planned_arrival": "2026-01-05",
+    "actual_arrival": "2026-01-06",
+    "status": "DELIVERED",
+    "source_file": "sample.xlsx"
+  }
+]

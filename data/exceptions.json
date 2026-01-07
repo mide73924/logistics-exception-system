@@ -1,0 +1,9 @@
+[
+  {
+    "shipment_ref": "TEST1",
+    "rule_code": "ARRIVAL_LATE",
+    "rule_description": "Late arrival",
+    "severity": "HIGH",
+    "exception_value": "2026-01-06"
+  }
+]
