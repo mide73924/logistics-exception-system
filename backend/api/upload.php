@@ -11,9 +11,21 @@
  * Responds with JSON status:
  * { "success": true, "inserted": N }
  */
+require_once __DIR__ . '/../../vendor/autoload.php'; // if using Composer
+
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->load();
+
+$mysqli = new mysqli(
+    $_ENV['DB_HOST'],
+    $_ENV['DB_USER'],
+    $_ENV['DB_PASSWORD'],
+    $_ENV['DB_NAME']
+);
 
 
-header("Content-Type: application/json");
 
 $input = json_decode(file_get_contents('php://input'), true);
 if (!$input) {
@@ -21,11 +33,12 @@ if (!$input) {
     exit;
 }
 
-$mysqli = new mysqli("localhost", "DB_USER", "DB_PASSWORD", "DB_NAME");
 if ($mysqli->connect_error) {
     echo json_encode(["success" => false, "error" => $mysqli->connect_error]);
     exit;
 }
+
+header("Content-Type: application/json");
 
 $inserted = 0;
 $stmt = $mysqli->prepare("

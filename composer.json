@@ -1,0 +1,9 @@
+{
+    "name": "mide73924/logistics-exception-system",
+    "description": "PHP APIs for shipment exception management system",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "minimum-stability": "stable"
+}

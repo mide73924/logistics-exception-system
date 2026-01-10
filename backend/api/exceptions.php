@@ -9,14 +9,26 @@
  * ]
  */
 
+require_once __DIR__ . '/../../vendor/autoload.php'; // if using Composer
 
-header("Content-Type: application/json");
+use Dotenv\Dotenv;
 
-$mysqli = new mysqli("localhost", "DB_USER", "DB_PASSWORD", "DB_NAME");
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->load();
+
+$mysqli = new mysqli(
+    $_ENV['DB_HOST'],
+    $_ENV['DB_USER'],
+    $_ENV['DB_PASSWORD'],
+    $_ENV['DB_NAME']
+);
+
 if ($mysqli->connect_error) {
     echo json_encode(["success" => false, "error" => $mysqli->connect_error]);
     exit;
 }
+
+header("Content-Type: application/json");
 
 $result = $mysqli->query("
     SELECT s.shipment_ref, e.rule_code, e.rule_description, e.severity, e.exception_value
